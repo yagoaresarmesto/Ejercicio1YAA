@@ -4,13 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:contentDescription="boton añadir"
     tools:context=".MostrarUsuarios">
 
-    <TextView
-        android:id="@+id/textView"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="410dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="4dp"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Lista de Usuarios" />
+
+    <Button
+        android:id="@+id/btn_añadir"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hola!"
-        tools:layout_editor_absoluteX="57dp"
-        tools:layout_editor_absoluteY="57dp" />
+        android:layout_marginStart="252dp"
+        android:layout_marginTop="152dp"
+        android:text="Button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
