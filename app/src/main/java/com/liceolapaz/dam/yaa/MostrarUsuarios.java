@@ -1,5 +1,6 @@
 package com.liceolapaz.dam.yaa;
 
+<<<<<<< HEAD
 
 import android.app.Activity;
 import android.database.sqlite.SQLiteDatabase;
@@ -15,11 +16,19 @@ public class MostrarUsuarios extends Activity {
 
     Button btn_añadir;
 
+=======
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+
+public class MostrarUsuarios extends AppCompatActivity {
+>>>>>>> 3078bced74ffe433f8e73e9db086a78e4f0140c0
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mostrar_usuarios);
+<<<<<<< HEAD
 
         //Relacionar con los id de los campos y botón
 
@@ -45,4 +54,7 @@ public class MostrarUsuarios extends Activity {
         });
 
         }
+=======
+    }
+>>>>>>> 3078bced74ffe433f8e73e9db086a78e4f0140c0
 }

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
     android:contentDescription="boton añadir"
     tools:context=".MostrarUsuarios">
 
@@ -29,4 +30,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+=======
+    tools:context=".MostrarUsuarios">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hola!"
+        tools:layout_editor_absoluteX="57dp"
+        tools:layout_editor_absoluteY="57dp" />
+>>>>>>> 3078bced74ffe433f8e73e9db086a78e4f0140c0
 </androidx.constraintlayout.widget.ConstraintLayout>
