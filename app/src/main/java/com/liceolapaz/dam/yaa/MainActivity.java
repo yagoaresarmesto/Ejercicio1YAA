@@ -33,7 +33,7 @@ public class MainActivity extends Activity {
             public void onClick(View view) {
                 if (usuario.getText().toString().equals("admin") && contraseña.getText().toString().equals("liceo")) { //Cuando se cumplan estas condiciones
                     //Paso a la siguiente Activity
-                    Intent intent = new Intent(MainActivity.this, MostrarUsuarios.class);
+                    Intent intent = new Intent(MainActivity.this, Nuevo.class );
                     startActivity(intent);
 
                 } else {

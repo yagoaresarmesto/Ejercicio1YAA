@@ -10,7 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Ejercicio1YAA">
         <activity
-            android:name=".MostrarUsuarios"
+            android:name=".Nuevo"
+            android:exported="false" />
+        <activity
+            android:name=".MostrarAdd"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
