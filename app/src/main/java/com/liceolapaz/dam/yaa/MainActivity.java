@@ -1,6 +1,6 @@
 package com.liceolapaz.dam.yaa;
 
-import androidx.appcompat.app.AppCompatActivity;
+
 
 import android.app.Activity;
 import android.content.Intent;
@@ -33,7 +33,7 @@ public class MainActivity extends Activity {
             public void onClick(View view) {
                 if (usuario.getText().toString().equals("admin") && contraseña.getText().toString().equals("liceo")) { //Cuando se cumplan estas condiciones
                     //Paso a la siguiente Activity
-                    Intent intent = new Intent(MainActivity.this, Nuevo.class );
+                    Intent intent = new Intent(MainActivity.this, Mostrar.class );
                     startActivity(intent);
 
                 } else {

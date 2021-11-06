@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">Ejercicio1YAA</string>
+    <string name="app_name">Lista de Usuarios</string>
     <string name="constraseña">Contraseña</string>
     <string name="usuario">Usuario</string>
     <string name="login">Login</string>
-
+    <string name="añadir">Añadir</string>
 </resources>

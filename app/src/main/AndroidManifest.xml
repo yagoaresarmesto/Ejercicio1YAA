@@ -13,7 +13,7 @@
             android:name=".Nuevo"
             android:exported="false" />
         <activity
-            android:name=".MostrarAdd"
+            android:name=".Mostrar"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
