@@ -1,8 +1,11 @@
 package com.liceolapaz.dam.yaa;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -37,16 +40,39 @@ public class Nuevo extends Activity {
         btnGuardar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DbUsuarios dbUsuarios = new DbUsuarios(Nuevo.this);
-                long insertar = dbUsuarios.insertarUsuarios(txtEmail.getText().toString(), txtContraseña.getText().toString(),
-                        spinnerIdioma.getSelectedItem().toString(), txtEdad.getText().length(), txtNombre.getText().toString());
-                limpiarCampos();
-                if (insertar > 0) {
-                    Toast.makeText(Nuevo.this, "SE HA GUARDADO EL REGISTRO CORRECTAMENTE", Toast.LENGTH_SHORT).show();
+                AlertDialog.Builder builder = new AlertDialog.Builder(Nuevo.this);
+                builder.setMessage("¿Desea registrar este usuario?")
+                        .setPositiveButton("SI", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                if (!txtEmail.getText().toString().equals("") && !txtContraseña.getText().toString().equals("") && !txtNombre.getText().toString().equals("")) {
 
-                } else {
-                    Toast.makeText(Nuevo.this, "ERROR AL GUARDAR EL REGISTRO", Toast.LENGTH_SHORT).show();
-                }
+                                    DbUsuarios dbUsuarios = new DbUsuarios(Nuevo.this);
+                                    long id = dbUsuarios.insertarUsuarios(txtEmail.getText().toString(), txtContraseña.getText().toString(),
+                                            spinnerIdioma.getSelectedItem().toString(), txtEdad.getText().length(), txtNombre.getText().toString());
+                                    limpiarCampos();
+                                    if (id > 0) {
+                                        Toast.makeText(Nuevo.this, "SE HA GUARDADO EL REGISTRO CORRECTAMENTE", Toast.LENGTH_SHORT).show();
+                                        volverlista();
+                                    } else {
+                                        Toast.makeText(Nuevo.this, "ERROR AL GUARDAR EL REGISTRO", Toast.LENGTH_SHORT).show();
+                                    }
+
+                                } else {
+                                    Toast.makeText(Nuevo.this, "DEBES LLEANAR TODOS LOS CAMPOS", Toast.LENGTH_SHORT).show();
+                                }
+
+                            }
+
+                        })
+
+                        .setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                volvernuevo();
+                            }
+                        }).show();
+
             }
         });
 
@@ -60,5 +86,15 @@ public class Nuevo extends Activity {
         txtContraseña.setText("");
         txtEdad.setText("");
         txtNombre.setText("");
+    }
+
+    private void volvernuevo() {
+        Intent intent = new Intent(this, Nuevo.class);
+        startActivity(intent);
+    }
+
+    private void volverlista() {
+        Intent intent = new Intent(this, Mostrar.class);
+        startActivity(intent);
     }
 }

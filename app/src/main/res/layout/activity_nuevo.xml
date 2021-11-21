@@ -125,9 +125,9 @@
 
     <Button
         android:id="@+id/btn_guardar"
-        android:layout_width="93dp"
-        android:layout_height="43dp"
-        android:layout_marginStart="64dp"
+        android:layout_width="135dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="124dp"
         android:layout_marginTop="36dp"
         android:text="Guardar"
         app:layout_constraintStart_toStartOf="parent"

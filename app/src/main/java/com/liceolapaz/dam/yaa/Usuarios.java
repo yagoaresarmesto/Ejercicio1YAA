@@ -2,11 +2,21 @@ package com.liceolapaz.dam.yaa;
 
 public class Usuarios {
 
+
+    private int id;
     private String email;
     private String contraseña;
     private String idioma;
     private String edad;
     private String nombre;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getEmail() {
         return email;
@@ -16,7 +26,7 @@ public class Usuarios {
         this.email = email;
     }
 
-    public String getContraseña(){
+    public String getContraseña() {
         return contraseña;
     }
 

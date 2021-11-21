@@ -1,7 +1,10 @@
 package com.liceolapaz.dam.yaa;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
@@ -48,6 +51,18 @@ public class ListaUsuariosAdapter extends RecyclerView.Adapter<ListaUsuariosAdap
             viewNombre = itemView.findViewById(R.id.viewNombre);
             viewIdioma = itemView.findViewById(R.id.viewIdioma);
             viewEdad = itemView.findViewById(R.id.viewEdad);
+
+
+            itemView.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Context context = view.getContext();
+                    Intent intent = new Intent(context, Ver.class);
+                    intent.putExtra("ID", listaUsuarios.get(getAdapterPosition()).getId());
+                    context.startActivity(intent);
+                }
+            });
+
         }
     }
 }
