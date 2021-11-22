@@ -49,7 +49,7 @@ public class Nuevo extends Activity {
 
                                     DbUsuarios dbUsuarios = new DbUsuarios(Nuevo.this);
                                     long id = dbUsuarios.insertarUsuarios(txtEmail.getText().toString(), txtContraseña.getText().toString(),
-                                            spinnerIdioma.getSelectedItem().toString(), txtEdad.getText().length(), txtNombre.getText().toString());
+                                            spinnerIdioma.getSelectedItem().toString(), Integer.parseInt(txtEdad.getText().toString()), txtNombre.getText().toString());
                                     limpiarCampos();
                                     if (id > 0) {
                                         Toast.makeText(Nuevo.this, "SE HA GUARDADO EL REGISTRO CORRECTAMENTE", Toast.LENGTH_SHORT).show();
