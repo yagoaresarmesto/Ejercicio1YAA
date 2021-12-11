@@ -35,6 +35,7 @@ public class ListaUsuariosAdapter extends RecyclerView.Adapter<ListaUsuariosAdap
         holder.viewEdad.setText(listaUsuarios.get(position).getEdad());
     }
 
+
     @Override
     public int getItemCount() {
         return listaUsuarios.size();
@@ -60,6 +61,7 @@ public class ListaUsuariosAdapter extends RecyclerView.Adapter<ListaUsuariosAdap
                     Intent intent = new Intent(context, Ver.class);
                     intent.putExtra("ID", listaUsuarios.get(getAdapterPosition()).getId());
                     context.startActivity(intent);
+
                 }
             });
 
